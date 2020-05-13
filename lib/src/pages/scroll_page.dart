@@ -8,7 +8,7 @@ class ScrollPage extends StatelessWidget {
         scrollDirection: Axis.vertical,
         children: <Widget>[
           _pagina1(),
-          _pagina2(),
+          _pagina2(context),
         ],
       ),
     );
@@ -62,22 +62,42 @@ class ScrollPage extends StatelessWidget {
     );
   }
 
-  Widget _pagina2() {
+  Widget _pagina2(BuildContext context) {
     return Container(
-      width: double.infinity,
-      height: double.infinity,
       color: Color.fromRGBO(108, 192, 218, 1.0),
-      child: Center(
-        child: RaisedButton(
-          shape: StadiumBorder(),
-          textColor: Colors.white,
-          color: Colors.blue,
-          child: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
-            child: Text('Bienvenidos', style: TextStyle(fontSize: 20.0),),
-          ),
-          onPressed: (){}
-        ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: <Widget>[
+          RaisedButton(
+              shape: StadiumBorder(),
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                child: Text(
+                  'Puentes',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, 'basico');
+              }),
+          SizedBox(height: 10.0,),
+          RaisedButton(
+              shape: StadiumBorder(),
+              textColor: Colors.white,
+              color: Colors.blue,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 40.0, vertical: 20.0),
+                child: Text(
+                  'Botones',
+                  style: TextStyle(fontSize: 20.0),
+                ),
+              ),
+              onPressed: () {
+                Navigator.pushNamed(context, 'botones');
+              }),
+        ],
       ),
     );
   }

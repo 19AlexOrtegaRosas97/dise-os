@@ -8,10 +8,11 @@ void main() => runApp(MyApp());
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Diseños',
-      initialRoute: 'botones',
+      initialRoute: 'scroll',
       routes: {
         'basico' : (BuildContext context) => BasicoPage(),
         'scroll' : (BuildContext context) => ScrollPage(),
